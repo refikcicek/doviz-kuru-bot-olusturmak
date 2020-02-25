@@ -10,12 +10,10 @@ index-json-cikti.php	dosyasında Doviz.com'da bulunan verileri çekip sunucuda d
 # Döviz Kuru JSON'daki veriyi ekrana yazdırma
 Aşağıdaki kod yapısı ile dilediğiniz veriyi oluşturduğunuz doviz.json dosyasından çekebilirsiniz.
 
-<?php
-$jsonVeri=file_get_contents("doviz.json");
-$veri=json_decode($jsonVeri,1);
-?>
 
-<?php echo $veri["doviz"]["DOLAR CHANGE"]; ?>
-<?php echo $veri["doviz"]["DOLAR ALIS"]; ?>
-<?php echo $veri["doviz"]["DOLAR SATIS"]; ?>
-<?php echo $veri["doviz"]["DOLAR YON"]; ?>
+$jsonVeri=file_get_contents("doviz.json");<br>
+$veri=json_decode($jsonVeri,1);
+
+
+echo $veri["doviz"]["DOLAR ALIS"];<br>
+echo $veri["doviz"]["DOLAR SATIS"]; 
