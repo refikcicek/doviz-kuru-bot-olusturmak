@@ -1,4 +1,5 @@
-# doviz-kuru-bot-olusturmak
+# Dözi Kuru Botu Oluşturma
 Döviz Verilerini Bot ile Çekmek ve Json Olarak Oluşturmak
+Doviz.com'da bulunan verileri çekip sunucuda doviz.json dosyası olarak çıktı almasını sağlayabilirsiniz.
 
-Doviz.com'da bulunan verileri kolayca json olarak çekip ekrana yazdırabilmenizi sağlar.
+ olarak çekip ekrana yazdırabilmenizi sağlar.
