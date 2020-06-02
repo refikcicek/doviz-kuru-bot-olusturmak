@@ -1,5 +1,4 @@
 <?php
-	
 		function ara($bas, $son, $yazi)
 		{
 			@preg_match_all('/' . preg_quote($bas, '/') . '(.*?)'. preg_quote($son, '/').'/i', $yazi, $m);
@@ -9,20 +8,27 @@
 		$link = "https://kur.doviz.com/";
 		$link2 = "https://altin.doviz.com/gram-altin";
 		$link3 = "https://borsa.doviz.com/endeksler/XU100";
+		$eurourl = "https://kur.doviz.com/serbest-piyasa/euro";
+		$dolarurl = "https://kur.doviz.com/serbest-piyasa/amerikan-dolari";
 		$doviz = file_get_contents($link);
 		$altin = file_get_contents($link2);
 		$bist = file_get_contents($link3);
+		$dolar = file_get_contents($dolarurl);
+		$euro = file_get_contents($eurourl);
 
 		$deger = ara('<td>','</td>',$doviz);
 		$altinfiyati = ara('<span class="value">','</span>',$altin);
 		$bistfiyati = ara('<span class="value">','</span>',$bist);
-		$dolar_alis = str_replace(",",".",$deger[0]);
-		$dolar_satis = str_replace(",",".",$deger[1]);
-		$euro_alis = str_replace(",",".",$deger[2]);
-		$euro_satis = str_replace(",",".",$deger[3]);
-		$altin_alis = str_replace(",",".",$altinfiyati[6]);
-		$altin_satis = str_replace(",",".",$altinfiyati[7]);
-		$bist = $bistfiyati[6];
+		$dolarfiyati = ara('<span class="value">','</span>',$dolar);
+		$eurofiyati = ara('<span class="value">','</span>',$euro);
+		$altin_alis = str_replace(",",".",$altinfiyati[7]);
+		$altin_satis = str_replace(",",".",$altinfiyati[8]);
+		$dolar_alis = str_replace(",",".",$dolarfiyati[7]);
+		$dolar_satis = str_replace(",",".",$dolarfiyati[8]);
+		$euro_alis = str_replace(",",".",$eurofiyati[7]);
+		$euro_satis = str_replace(",",".",$eurofiyati[8]);
+		
+		$bist = $bistfiyati[4];
 		
 		preg_match_all('@<div class="change">
                         <span class="arrow (.*?)"></span>
@@ -40,7 +46,6 @@ $json["doviz"] = array(
 	'EURO SATIS'=> $euro_satis,
 	'EURO YON'=> $change_up[1][2],
 	'EURO CHANGE'=> $change_up[2][2],
-	'DOLAR SATIS'=> $euro_satis,
 	'ALTIN ALIS'=> $altin_alis,
 	'ALTIN SATIS'=> $altin_satis,
 	'ALTIN YON'=> $change_up[1][0],
@@ -57,5 +62,5 @@ if(fwrite($dt, json_encode($json, true)))
 {
   echo 'JSON Güncellemesi Başarılı.';
 }
-	?>
+?>
 	
