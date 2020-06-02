@@ -1,4 +1,4 @@
-
+<a href="http://prntscr.com/ss8jd1">Döviz Kuru Örnek Görünüm</a>
 
 # Döviz Kuru Botu Oluşturma
 Döviz Verilerini Bot ile Çekmek ve Json Olarak Oluşturmak
