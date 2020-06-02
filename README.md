@@ -1,4 +1,4 @@
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/NuaRnY0"><a href="//imgur.com/a/NuaRnY0"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
 
 # Döviz Kuru Botu Oluşturma
 Döviz Verilerini Bot ile Çekmek ve Json Olarak Oluşturmak
